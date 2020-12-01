@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/tailwind.css">
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/tippy.js@6/animations/scale.css"
+    />
+
+    <title>Guess The Number</title>
+</head>
+
+<body class="bg-main-image h-screen mx-auto flex text-center">
+    <div class=" bg-indigo-100 px-4 min-w-4xl max-w-full mx-auto my-auto rounded-lg flex flex-col" id="container">
+        <div class="py-3 min-w-4xl mx-auto my-auto">
+            <div class=" bg-white min-w-4xl flex flex-col rounded-xl shadow-2xl">
+                <div class="px-12 py-5">
+                    <h2 class="text-gray-900 text-2xl font-bold text-center">
+                        I have a random number<br>
+                        <span class="align-middle">between 1-100</span>
+
+                        <h2 class="text-gray-900 text-2xl font-semibold text-center mt-4">Dare to guess?</h2>
+                    </h2>
+                    <hr class="mt-4 mb-3">
+                    <h2 class="text-gray-900 text-xl font-semibold text-center mb-12">Select difficulty setting:</h2>
+
+                    <div class="grid grid-cols-3 gap-8">
+                        <div>
+                            <a  href="#"
+                                class="w-full mb-6 inline-block px-6 py-3 bg-indigo-400 hover:bg-indigo-800 rounded-lg text-white shadow-lg font-semibold tracking-widest text-center"
+                                id="easyButton" onclick="gameDifficulty(this.id)">
+                                Easy
+                            </a>
+                        </div>
+                        <div>
+                            <a  href="#"
+                                class="w-full inline-block px-6 py-3 bg-indigo-400 hover:bg-indigo-800 rounded-lg text-white shadow-lg font-semibold tracking-widest text-center"
+                                id="hardButton" onclick="gameDifficulty(this.id)">
+                                Hard
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#"
+                                class="w-full inline-block px-6 py-3 bg-indigo-400 hover:bg-indigo-800 rounded-lg text-white shadow-lg font-semibold tracking-widest text-center"
+                                id="insaneButton" onclick="gameDifficulty(this.id)">
+                                Insane!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" py-3 min-w-full max-w-4xl mx-auto my-auto">
+            <div class="bg-white min-w-4xl max-w-4xl flex flex-col rounded-xl shadow-2xl">
+                <div class="px-12 py-5 w-full">
+                    <div class="grid grid-flow-col gap-2 flex justify-center">
+                        <h2 class=" text-gray-900 text-xl font-semibold text-center" id="resultField">
+                            Input your guess below and press Enter<br>
+                        </h2>
+                        <input
+                            class="bg-transparent inline-block px-1 py-1 hover:bg-indigo-100 rounded-lg"
+                            id="restart" onclick="location.reload()"
+                            type="image" src="/public/img/reload.png">
+                    
+                    </div>
+
+                    <div class="bg-white">
+                        <div class="grid grid-cols-7 gap-6">
+                            <div class="col-span-full">
+                                <div class="mt-1 flex rounded-md shadow-lg">
+                                    <input 
+                                        type="number" onkeypress="return checkIfEnter()" id="userAnswer"
+                                        class="block w-full p-3 mt-2 text-gray-900 bg-indigo-100 text-center border-indigo-900 appearance-none focus:border-indigo-900 focus:bg-indigo-100 focus:shadow-inner"
+                                        placeholder="Your answer here">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="mt-5 w-full inline-block text-center" id="attempts"></span>
+                    <span class="mt-2 w-full inline-block text-center" id="guessedNumbers"></span>          
+                </div>
+            </div>
+        </div>
+        <div>
+            <span>
+                Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar"><strong>Gregor Cresnar</strong></a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            </span>
+        </div>
+    </div>
+    
+    <script src="/public/script/script.js"></script>
+
+</body>
+
+</html>
