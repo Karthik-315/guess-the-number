@@ -7,8 +7,6 @@ var prevGuesses = [];
 //Gets a random integer between 1 and 100 and sets it to randInt 
 generateRandomNumber();
 
-alert(randInt);
-
 document.getElementById("attempts").innerHTML = "Attempts Left: " + attemptsLeft;
 document.getElementById("restart").style.display = "none";
 
